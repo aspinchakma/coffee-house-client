@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         element: <EditUser />,
         loader: ({ params }) =>
           fetch(
-            `https://coffee-house-server-lzyu.onrender.com/user/edit/${params.id}`
+            `https://coffee-house-server-lzyu.onrender.com/users/${params.id}`
           ),
         hydrateFallbackElement: <Loading />,
       },
