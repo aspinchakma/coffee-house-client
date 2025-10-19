@@ -75,7 +75,6 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch("https://coffee-house-server-lzyu.onrender.com/users"),
-        hydrateFallbackElement: <Loading />,
       },
       {
         path: "/users/:id",
