@@ -10,7 +10,6 @@ import UserDetails from "../components/UserDetails";
 import Users from "../components/Users";
 import MainLayOut from "../layouts/MainLayOut";
 import EditUser from "./../components/EditUser";
-import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -26,19 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addcoffee",
-        element: (
-          <PrivateRouter>
-            <AddCoffe />
-          </PrivateRouter>
-        ),
+        element: <AddCoffe />,
       },
       {
         path: "/coffees/:id",
-        element: (
-          <PrivateRouter>
-            <CoffeeDetails />
-          </PrivateRouter>
-        ),
+        element: <CoffeeDetails />,
         loader: ({ params }) =>
           fetch(
             `https://coffee-house-server-lzyu.onrender.com/coffees/${params.id}`
@@ -47,11 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateDetails/:id",
-        element: (
-          <PrivateRouter>
-            <UpdateDetails />
-          </PrivateRouter>
-        ),
+        element: <UpdateDetails />,
         loader: ({ params }) =>
           fetch(
             `https://coffee-house-server-lzyu.onrender.com/coffees/${params.id}`
@@ -68,21 +55,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        element: (
-          <PrivateRouter>
-            <Users />
-          </PrivateRouter>
-        ),
+        element: <Users />,
         loader: () =>
           fetch("https://coffee-house-server-lzyu.onrender.com/users"),
       },
       {
         path: "/users/:id",
-        element: (
-          <PrivateRouter>
-            <UserDetails />
-          </PrivateRouter>
-        ),
+        element: <UserDetails />,
         loader: ({ params }) =>
           fetch(
             `https://coffee-house-server-lzyu.onrender.com/users/${params.id}`
@@ -91,11 +70,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/user/edit/:id",
-        element: (
-          <PrivateRouter>
-            <EditUser />
-          </PrivateRouter>
-        ),
+        element: <EditUser />,
         loader: ({ params }) =>
           fetch(
             `https://coffee-house-server-lzyu.onrender.com/user/edit/${params.id}`
