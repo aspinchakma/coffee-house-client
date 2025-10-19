@@ -6,6 +6,13 @@ import SignleUser from "./SignleUser";
 const Users = () => {
   const initialValue = useLoaderData();
   const [users, setUsers] = useState(initialValue);
+  console.log(users);
+
+  fetch("https://coffee-house-server-lzyu.onrender.com/users")
+    .then((res) => res.json())
+    .then((result) => {
+      console.log("this is the result", result);
+    });
 
   const handleUserDelete = (id) => {
     Swal.fire({
